@@ -3,6 +3,7 @@
     "uid": "93W7rhFPmzboCyax1QmKeN",
     "title": "Dole, Pineapple Slices in Juice, 20 Oz",
     "price": 1.12,
+    "quantity": 20,
     "category": "food",
     "keywords": [
       "food",
@@ -23,6 +24,7 @@
     "uid": "7aoNkgSg71nPkmFa43f2kg",
     "title": "Kraft Thick and Creamy Macaroni and Cheese Dinner, 7.25 oz Box (3 Boxes)",
     "price": 22.79,
+    "quantity": 10,
     "category": "food",
     "keywords": [
       "food",
@@ -43,6 +45,7 @@
     "uid": "878VDBbxLSqBU9WGvU95ZY",
     "title": "Whole Apple Pie, 35 Ounce",
     "price": 10.99,
+    "quantity": 6,
     "category": "food",
     "keywords": [
       "food",
@@ -63,6 +66,7 @@
     "uid": "2wbEMpDB9wmXWRWK3YP9JT",
     "title": "Red Baron, Classic Four Cheese Pizza, 21.06 Ounce (Frozen)",
     "price": 3.52,
+    "quantity": 15,
     "category": "food",
     "keywords": [
       "food",
@@ -83,6 +87,7 @@
     "uid": "9GNrc1e5uPSbyTDUqyuh4z",
     "title": "UNCLE BEN'S Ready Whole Grain Medley: Brown Rice & Wild Rice, Ready to Heat, 8.5 Oz Pouches, Pack of 6",
     "price": 11.94,
+    "quantity": 30,
     "category": "food",
     "keywords": [
       "food",
