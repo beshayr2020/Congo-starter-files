@@ -21,6 +21,7 @@ let product = {
     "uid": translator.new(),
     "title": "UNCLE BEN'S Ready Whole Grain Medley: Brown Rice & Wild Rice, Ready to Heat, 8.5 Oz Pouches, Pack of 6",
     "price": 11.94,
+    "quantity": 20,
     "category": "food",
     "keywords": [
         "food",
