@@ -23,7 +23,7 @@ const users = {
                         })
                         .catch((error) => {
                             //if and error happened it will return an error message
-                            reject("Couldn't add user");
+                            reject("Could not add user, please try again");
                         });
                 }
             })
@@ -48,7 +48,7 @@ const users = {
                         //email is incorrect, sends error message
                         reject("Incorrect email or password");
                     }
-                }else {
+                } else {
                     //couldn't find user so it sends error message
                     reject("Incorrect email or password");
                 }
@@ -62,19 +62,31 @@ const users = {
     //used to delete a user from the database
     delete: function (userObj) {
         return new Promise((resolve, reject) => {
-            if(userObj.password === process.env.DELETE_KEY) {
-                UserDb.findOneAndDelete({ uuid: userObj.uuid }, (err, foundUser) => {
-                    if(foundUser){
-                        resolve(foundUser);
-                    }else{
-                        reject("Could not find user");
+            //checks database for the email supplied
+            UserDb.findOne({ email: userObj.email }, (err, foundUser) => {
+                if (foundUser) {
+                    //compares password supplied to hashed pass in db
+                    const comparePass = bcrypt.compareSync(userObj.password, foundUser.password);
+                    //will return true if it matches
+                    if (comparePass) {
+                        
+                        UserDb.findOneAndDelete({ uuid: foundUser.uuid }, (err, user) => {
+                            if (user) {
+                                resolve({ status: "deleted", user: user });
+                            } else {
+                                reject("Could not find user");
+                            }
+                        });
+                    } else {
+                        //email is incorrect, sends error message
+                        reject("Incorrect email or password");
                     }
-                });
-            }else {
-                reject("Incorrect password");
-            };
-            
-        });
+                } else {
+                    //couldn't find user so it sends error message
+                    reject("Incorrect email or password");
+                }
+            });
+        })
     }
 
 };
